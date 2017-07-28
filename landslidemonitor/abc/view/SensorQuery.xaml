@@ -1,0 +1,81 @@
+﻿<Window x:Class="abc.view.SensorQuery"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:abc.view"
+        mc:Ignorable="d"
+        Title="采集节点信息查询" Height="700" Width="1000" Background="LightBlue" Icon="../image/init.png"
+        WindowStartupLocation="CenterScreen">
+    <Grid>
+        <GroupBox Header="采集节点信息查询" FontSize="15" Margin="5" BorderThickness="2">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40" />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <TextBlock Text="采集节点信息查询：" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                <ComboBox Grid.Column="1" Height="35" Width="200" Margin="5" VerticalContentAlignment="Center"
+                          SelectedIndex="0">
+                    <ComboBoxItem>一号采集节点</ComboBoxItem>
+                    <ComboBoxItem>二号采集节点</ComboBoxItem>
+                    <ComboBoxItem>三号采集节点</ComboBoxItem>
+                    <ComboBoxItem>四号采集节点</ComboBoxItem>
+                    <ComboBoxItem>五号采集节点</ComboBoxItem>
+                    <ComboBoxItem>六号采集节点</ComboBoxItem>
+                    <ComboBoxItem>七号采集节点</ComboBoxItem>
+                    <ComboBoxItem>八号采集节点</ComboBoxItem>
+                    <ComboBoxItem>九号采集节点</ComboBoxItem>
+                    <ComboBoxItem>十号采集节点</ComboBoxItem>
+                    <ComboBoxItem>十一号采集节点</ComboBoxItem>
+                    <ComboBoxItem>十二号采集节点</ComboBoxItem>
+                    <ComboBoxItem>十三号采集节点</ComboBoxItem>
+                    <ComboBoxItem>十四号采集节点</ComboBoxItem>
+                    <ComboBoxItem>十五号采集节点</ComboBoxItem>
+                </ComboBox>
+                <Button Content="查询" Grid.Column="2" Height="25" Width="70" />
+                <DataGrid x:Name="DataGrid1" Grid.Row="1" Grid.ColumnSpan="3" Style="{StaticResource DataGrid}"
+                          ColumnHeaderStyle="{StaticResource DataGridColumnHeader}">
+                    <DataGrid.Columns>
+                        <DataGridCheckBoxColumn Header="选择" Width="1*" />
+                        <DataGridTextColumn Header="信息采集节点" Width="2*"
+                                            Binding="{Binding Name}"
+                                            ElementStyle="{StaticResource TextBlockstyle}" />
+                        <DataGridTemplateColumn Header="工作状态" Width="2*">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Image Source="{Binding StatusPhoto}"  Height="20" Width="20" />
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTemplateColumn Header="电压电量" Width="2*">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Image Source="{Binding BatteryPhoto}"  Height="20" Width="20" />
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTextColumn Header="温度" Width="2*"
+                                            Binding="{Binding Temperature }"
+                                            ElementStyle="{StaticResource TextBlockstyle}" />
+                        <DataGridTextColumn x:Name="LampChargingCountcolumn" Header="湿度" Width="3*"
+                                            Binding="{Binding Dampness }"
+                                            ElementStyle="{StaticResource TextBlockstyle}" />
+                        <DataGridTextColumn x:Name="Classcolumn" Header="存储状态" Width="2*"
+                                            Binding="{Binding StorageStatus }"
+                                            ElementStyle="{StaticResource TextBlockstyle}" />
+                        <DataGridTextColumn x:Name="StatusTimecolumn" Header="剩余空间" Width="3*"
+                                            Binding="{Binding RemainStorage }"
+                                            ElementStyle="{StaticResource TextBlockstyle}" />
+                       </DataGrid.Columns>
+                </DataGrid>
+
+            </Grid>
+        </GroupBox>
+    </Grid>
+</Window>

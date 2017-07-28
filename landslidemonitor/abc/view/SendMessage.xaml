@@ -1,0 +1,56 @@
+﻿<Window x:Class="abc.view.SendMessage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:abc.view"
+        mc:Ignorable="d"
+        Title="预警信息设置" Height="350" Width="700" Background="LightBlue" Icon="../image/init.png" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <TabControl   Margin="5">
+            <TabItem Header="一级预警">
+                <Grid Margin="5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="40"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Text="微震阈值：" VerticalAlignment="Center"></TextBlock>
+                    <TextBox  Grid.Column="1" Height="30" Margin="5" VerticalContentAlignment="Center">50</TextBox>
+                    <TextBlock Text="GPS位移阈值：" Grid.Column="2" VerticalAlignment="Center"></TextBlock>
+                    <TextBox  Grid.Column="3" Height="30" Margin="5" VerticalContentAlignment="Center">100mm</TextBox>
+                    <TextBlock Text="湿度阈值：" Grid.Row="1" VerticalAlignment="Center"></TextBlock>
+                    <TextBox Grid.Row="1" Grid.Column="1" Height="30" Margin="5" VerticalContentAlignment="Center">95%</TextBox>
+                    <TextBlock Text="压力阈值：" Grid.Row="1" Grid.Column="2" VerticalAlignment="Center"></TextBlock>
+                    <TextBox Grid.Row="1" Grid.Column="3" Height="30" Margin="5" VerticalContentAlignment="Center">50kPa</TextBox>
+                   <TextBlock Text="预警消息设置：" Grid.Row="2" VerticalAlignment="Center"></TextBlock>
+                    <TextBox x:Name="messageTextBox" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3" Margin="5" TextWrapping="Wrap"
+  AcceptsReturn="True" VerticalContentAlignment="Center"></TextBox>
+                    <TextBlock Text="手机号1：" Grid.Row="3" VerticalAlignment="Center"></TextBlock>
+                    <TextBox x:Name="phoneTextBox" Grid.Row="3" Grid.Column="1" Height="30" Margin="5" VerticalContentAlignment="Center"></TextBox>
+                    <TextBlock Text="手机号2：" Grid.Row="4" VerticalAlignment="Center"></TextBlock>
+                    <TextBox x:Name="phoneTextBox2" Grid.Row="4" Grid.Column="1" Height="30" Margin="5"></TextBox>
+                    <TextBlock Text="手机号3：" Grid.Row="3" Grid.Column="2" VerticalAlignment="Center"></TextBlock>
+                    <TextBox Grid.Row="3" Grid.Column="3" Height="30" Margin="5"></TextBox>
+                    <TextBlock Text="手机号4：" Grid.Row="4" Grid.Column="2" VerticalAlignment="Center"></TextBlock>
+                    <TextBox Grid.Row="4" Grid.Column="4" Height="30" Margin="5"></TextBox>
+                    <Button Content="设置" Grid.ColumnSpan="4" Grid.Row="5" Height="25" Width="60" Click="ButtonBase_OnClick"></Button>
+                </Grid>
+            </TabItem>
+            <TabItem Header="二级预警">
+            </TabItem>
+            <TabItem Header="三级预警">
+            </TabItem>
+        </TabControl>
+       </Grid>
+</Window>
